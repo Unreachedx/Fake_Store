@@ -10,6 +10,16 @@ function HomePage() {
     const [products, setProducts] = useState([])
     const [changeCategory, setChangeCategory] = useState([])
 
+    const allButton = (products) => {
+      console.log("allButton clicked")
+      setproducts(products)
+    }
+
+    const changetheCategory = (changeCategory) => {
+      console.log("change")
+      setChangeCategory(changeCategory)
+    }
+
     useEffect(
       ()=>{
         //'https://fakestoreapi.com/products/categories'
@@ -40,8 +50,7 @@ function HomePage() {
       axios.get('https://fakestoreapi.com/products/category/jewelery')
       .then(res=>{
         console.log(res.data)
-        setChangejewelery(res.data)
-        console.log("yey yewelery")
+        setChangeCategory(res.data)
       })
       }, []
     )
@@ -50,11 +59,11 @@ function HomePage() {
 
   return (
     <div className='product-container'>
-      <p className='all-container'>All</p>
+      <p className='all-container' onClick={()=>allButton(item)}>All</p>
       <div className='categories'>
         {
           //item stores temporarly the information
-          category.map(item=><p onClick={()=>changeCategory(item)}>{item}</p>)
+          category.map(item=><p onClick={()=>changetheCategory(item)}>{item}</p>)
         }
       </div>
       <div className="products-container">

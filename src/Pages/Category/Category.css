@@ -1,0 +1,16 @@
+.category-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.category-container p {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #5264C3;
+    padding: 0 40px 30px 40px;
+}

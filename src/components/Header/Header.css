@@ -1,0 +1,15 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 10px;
+}
+
+.shopping-cart {
+    font-size: 2em;
+}
+
+.header-container h1{
+    color: #3A4895;
+}

@@ -25,7 +25,6 @@ function HomePage() {
       ()=>{
         //'https://fakestoreapi.com/products/categories'
         //'https://fakestoreapi.com/products'
-        //axios.get('https://fakestoreapi.com/products/categories')
         const fetchData = async () => {
           const [res1, res2] = await Promise.all([
             axios.get('https://fakestoreapi.com/products/categories'),

@@ -8,62 +8,43 @@ function HomePage() {
 
     const [category, setCategory] = useState([])
     const [products, setProducts] = useState([])
-    const [changeCategory, setChangeCategory] = useState([])
 
-    const allButton = (products) => {
+    const allProducts = () => {
+      //Should show all Items back on the Page
       console.log("allButton clicked")
-      setproducts(products)
+      setProducts(products)
     }
 
-    const changetheCategory = (changeCategory) => {
-      console.log("change")
-      setChangeCategory(changeCategory)
-    }
+    const getCategoryProducts = (category) =>{
+      //Should show only Categorys on page
+      console.log('Catgoery works')
+      setProducts(category)
+      }
 
     useEffect(
       ()=>{
         //'https://fakestoreapi.com/products/categories'
-        //first API call
-        axios.get('https://fakestoreapi.com/products/categories')
-        .then(res=>{
-          console.log(res.data)
-          setCategory(res.data)
-        })
-      }, []
-    ),
-
-    useEffect(
-      ()=>{
-        // 'https://fakestoreapi.com/products'
-        //make api call
-        axios.get('https://fakestoreapi.com/products')
-        .then(res =>{
-          console.log(res.data)
-          setProducts(res.data)
-        })
-      }, []
-    )
-
-    useEffect(
-      ()=>{
-      // 'https://fakestoreapi.com/products/category/jewelery'
-      axios.get('https://fakestoreapi.com/products/category/jewelery')
-      .then(res=>{
-        console.log(res.data)
-        setChangeCategory(res.data)
-      })
-      }, []
-    )
-
+        //'https://fakestoreapi.com/products'
+        //axios.get('https://fakestoreapi.com/products/categories')
+        const fetchData = async () => {
+          const [res1, res2] = await Promise.all([
+            axios.get('https://fakestoreapi.com/products/categories'),
+            axios.get('https://fakestoreapi.com/products')
+          ]);
+          setCategory(res1.data);
+          setProducts(res2.data);
+        };
+        fetchData();
+      }, []);
 
 
   return (
     <div className='product-container'>
-      <p className='all-container' onClick={()=>allButton(item)}>All</p>
+      <p className='all-container' onClick={allProducts}>All</p>
       <div className='categories'>
         {
           //item stores temporarly the information
-          category.map(item=><p onClick={()=>changetheCategory(item)}>{item}</p>)
+          category.map(item=><p onClick={()=>getCategoryProducts(item)}>{item}</p>)
         }
       </div>
       <div className="products-container">

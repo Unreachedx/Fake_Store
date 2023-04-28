@@ -53,13 +53,15 @@ function HomePage() {
 
   return (
     <div className='product-container'>
+      <div className='buttons-container'>
       <p className='all-container' onClick={allProducts}>All</p>
-      <div className='categories'>
+      <div className='categories-container'>
         {
           //item stores temporarly the information
           category.map(item=><p onClick={()=>getCategoryProducts(item)}>{item}</p>)
         }
       </div>
+        </div>
       <div className="products-container">
         {
           products.map(item=><ProductCard key={item.id} 

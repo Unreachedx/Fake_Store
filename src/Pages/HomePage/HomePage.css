@@ -3,13 +3,34 @@
     padding: 30px 10px;
 }
 
-.products-container h1{
-    text-align: center;
-    margin-bottom: 40px;
+.all-container{
+    margin: 0 10px 0 150px;
 }
 
 .products-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.buttons-container{
+    display: flex;
+    border: black 1px solid;
+    height: 24px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #5264C3;    
+}
+
+.categories-container{
+display: flex;
+align-items: center;
+}
+
+.categories-container p{
+margin: 35px;
 }

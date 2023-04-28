@@ -1,0 +1,63 @@
+.form-container{
+position: absolute;
+width: 863px;
+height: 783px;
+left: 309px;
+top: 100px;
+border: solid 1px black;
+background: #FFFFFF;
+display: flex;
+flex-direction: column;
+align-content: center;
+align-items: center;
+}
+
+.heading{
+height: 39px;
+width: 175px;
+left: 653px;
+top: 158px;
+border-radius: nullpx;
+
+}
+
+
+.firstName-container{
+height: 41px;
+width: 292px;
+left: 600px;
+top: 254px;
+border-radius: 6px;
+background-color: #B4B4B4;
+color: white;
+}
+
+.lastName-container{
+    height: 41px;
+width: 292px;
+left: 601px;
+top: 319px;
+border-radius: 6px;
+background-color: #B4B4B4;
+color: white;
+}
+
+.textarea-container{
+height: 105px;
+width: 291px;
+left: 601px;
+top: 386px;
+border-radius: 6px;
+background-color: #B4B4B4;
+color: white;
+}
+
+.submit-button{
+height: 41px;
+width: 156px;
+left: 663px;
+top: 528px;
+border-radius: 0px;
+background-color: #5264C3;
+color: white;
+}

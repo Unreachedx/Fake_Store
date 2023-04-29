@@ -1,5 +1,4 @@
 .form-container{
-position: absolute;
 width: 863px;
 height: 783px;
 left: 309px;
@@ -18,7 +17,7 @@ width: 175px;
 left: 653px;
 top: 158px;
 border-radius: nullpx;
-
+margin-bottom: 30px; 
 }
 
 
@@ -30,6 +29,7 @@ top: 254px;
 border-radius: 6px;
 background-color: #B4B4B4;
 color: white;
+margin-bottom: 30px; 
 }
 
 .lastName-container{
@@ -40,6 +40,7 @@ top: 319px;
 border-radius: 6px;
 background-color: #B4B4B4;
 color: white;
+margin-bottom: 30px; 
 }
 
 .textarea-container{
@@ -50,6 +51,7 @@ top: 386px;
 border-radius: 6px;
 background-color: #B4B4B4;
 color: white;
+margin-bottom: 30px; 
 }
 
 .submit-button{

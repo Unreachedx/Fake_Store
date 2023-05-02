@@ -37,6 +37,7 @@ function ProductDetails() {
     <h1>Title: {product?.name}</h1>
     <p>{product?.price}</p>
     <p>description: {product?.description?.name}</p>
+    <button className='AddtoCart-btn'>Add to Cart</button>
     </div>
 
     </div>

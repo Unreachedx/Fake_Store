@@ -1,0 +1,38 @@
+.details-container{
+    min-height: 90vh;
+    width: 863px;
+    height: 783px;
+    left: 309px;
+    top: 100px;
+    border: solid 1px black;
+    background: #FFFFFF;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.details-container img{
+width: 300px;
+height: 300px;
+}
+
+.title {
+    width: 234px;
+    height: 29px;
+    left: 839px;
+    top: 371px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    
+    display: flex;
+    align-items: center;    
+}
+
+.addtocart-btn{
+    width: 156px;
+    height: 41px;
+    background: #FFD814;
+}

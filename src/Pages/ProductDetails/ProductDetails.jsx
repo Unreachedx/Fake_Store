@@ -34,10 +34,10 @@ function ProductDetails() {
     <div className='details-container'>
     <img src={product?.image} />
     <div className='container-info'>
-    <h1>Title: {product?.name}</h1>
+    <p className='title'>Title: {product?.name}</p>
     <p>{product?.price}</p>
-    <p>description: {product?.description?.name}</p>
-    <button className='AddtoCart-btn'>Add to Cart</button>
+    <p>description: {product?.description}</p>
+    <button className='addtocart-btn'>Add to Cart</button>
     </div>
 
     </div>

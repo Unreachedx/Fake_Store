@@ -31,8 +31,14 @@ height: 300px;
     align-items: center;    
 }
 
-.addtocart-btn{
+.addcart-btn{
     width: 156px;
     height: 41px;
     background: #FFD814;
+}
+
+.removecart-btn{
+    width: 156px;
+    height: 41px;
+    background: #FFD814; 
 }

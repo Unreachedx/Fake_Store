@@ -1,6 +1,7 @@
 .footer-container{
     background-color: #3A4895;
     padding:10px;
+    width: 100%;
     color:var(--white);
     display: flex;
     justify-content: space-between;

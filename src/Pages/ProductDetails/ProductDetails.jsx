@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import "./ProductDetails.css"
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { CartContext } from '../../contexts/CartContext';
 
 function ProductDetails() {
     //I need to know the id of the character
@@ -30,16 +30,27 @@ function ProductDetails() {
         }, [] //this means run only once when the page loads
     )
 
+  //use global state
+  //NOTE {} not []
+  const {cart, addProduct, removeProduct} = useContext(CartContext)
+  //create a varible to test UI
+  //create state
+  const [isCart, setIsCart] = useState(false)
+
   return (
     <div className='details-container'>
     <img src={product?.image} />
-    <div className='container-info'>
+      <div className='container-info'>
     <p className='title'>Title: {product?.name}</p>
     <p>{product?.price}</p>
     <p>description: {product?.description}</p>
-    <button className='addtocart-btn'>Add to Cart</button>
-    </div>
-
+    {
+        isCart?
+        <button className='addcart-btn' onClick={()=>addProduct(product)}>Add to Cart</button>
+        :
+        <button className='removecart-btn' onClick={()=>removeProduct(product.id)}>Remove</button>
+    }
+      </div>
     </div>
   )
 }

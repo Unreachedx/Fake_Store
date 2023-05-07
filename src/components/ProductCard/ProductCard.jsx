@@ -8,7 +8,7 @@ import { CartContext } from '../../contexts/CartContext';
 function ProductCard({product}) {
   //use global state
   //NOTE {} not []
-  const {cart, addProduct,} = useContext(CartContext)
+  const {cart, addProduct, removeProduct} = useContext(CartContext)
   //create a varible to test UI
   //const isFavorite = false;
   //create state
@@ -36,7 +36,7 @@ function ProductCard({product}) {
       <p>{product.price}$</p>
       {
         isCart?
-        <HiHeart className='heart-icon' />
+        <HiHeart onClick={()=>removeProduct(product.id)} className='heart-icon' />
         :
         <HiOutlineHeart onClick={()=>addProduct(product)} className='heart-icon' />
       }

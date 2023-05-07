@@ -8,26 +8,17 @@ export default function CartContextProvider(props){
     //create global state
     const [cart, setCart] = useState([])
 
-    /* useEffect(
+    useEffect(
         ()=>{
             console.log('context loaded')
             //get value from local storage
-            const storedDarkMode = localStorage.getItem('darkMode')
-            //console.log(typeof(storedDarkMode))
-            if (storedDarkMode) {
+            const storedCart = localStorage.getItem('cartList')
+            if (storedCart) {
                 //use this to initalize State
-                setDarkMode(JSON.parse(storedDarkMode))
+                setCart(JSON.parse(storedCart))
             }
         }, [] //runs once when context loads
     )
-
-    useEffect(
-        ()=>{
-            console.log('darkMode now ', darkMode)
-            //save value anytime it changes
-            localStorage.setItem('darkMode', JSON.stringify(darkMode))
-        }, [darkMode] //runs anytime darkMode changes
-    ) */
 
 
     const addProduct = (productToAdd) =>{
@@ -36,10 +27,22 @@ export default function CartContextProvider(props){
         let newCart = [...cart, productToAdd]
         //update state
         setCart(newCart)
+        //update local storage
+        localStorage.setItem('cartList' , JSON.stringify(newCart))
+    }
+
+    const removeProduct = (productId) =>{
+        console.log('remove', productId)
+        //remove the object with productId
+        let newCart = cart.filter(item=>item.id !== productId)
+        //update state
+        setCart(newCart)
+        //update local storage
+        localStorage.setItem('cartList' , JSON.stringify(newCart))
     }
     
     return (
-        <CartContext.Provider value={{cart, addProduct, }} >
+        <CartContext.Provider value={{cart, addProduct, removeProduct }} >
             {props.children}
         </CartContext.Provider>
     )

@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 
 function Header() {
+
+    //use global state
+    //NOTE {} not []
+  const {cart} = useContext(CartContext)
+
+
   return (
     <div className='header-container'>
       <Link to='/'>

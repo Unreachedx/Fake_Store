@@ -1,5 +1,6 @@
 .checkout-container{
         display: flex;
         min-height: 90vh;
-        flex-wrap: wrap;
+        flex-wrap: wrap
 }
+

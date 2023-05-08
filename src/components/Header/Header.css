@@ -8,10 +8,12 @@
 }
 
 .number-container{
-    color: red;
+    color: white;
+    background-color: red;
+    border-radius: 100%;
     margin-left: 15px;
-    border-radius: 10px;
-}
+    font-size: 17px;
+    }
 
 .shopping-cart {
     font-size: 2em;

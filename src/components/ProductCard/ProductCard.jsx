@@ -16,7 +16,7 @@ function ProductCard({product}) {
 
   useEffect(
     ()=>{
-      //is this card in favorites?
+      //is this card in cart?
       setIsCart(cart.find(item=>item.id === product.id))
       //find returns the element if found, that is considered "true"
       //returns undefined if not, that is considered "false"
@@ -38,7 +38,7 @@ function ProductCard({product}) {
         isCart?
         <HiHeart onClick={()=>removeProduct(product.id)} className='heart-icon' />
         :
-        <HiOutlineHeart onClick={()=>addProduct(product)} className='heart-icon' />
+        <HiOutlineHeart onClick={()=>addProduct(product)} className='hoart-icon' />
       }
     </div>
   )

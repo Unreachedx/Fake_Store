@@ -7,6 +7,12 @@
     padding: 0 10px;
 }
 
+.number-container{
+    color: red;
+    margin-left: 15px;
+    border-radius: 10px;
+}
+
 .shopping-cart {
     font-size: 2em;
 }

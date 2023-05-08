@@ -1,6 +1,14 @@
 .checkout-container{
         display: flex;
         min-height: 90vh;
-        flex-wrap: wrap
 }
 
+.products-container{
+
+}
+
+.checkout-btn{
+                width: 156px;
+                height: 41px;
+                background: #FFD814;
+        }

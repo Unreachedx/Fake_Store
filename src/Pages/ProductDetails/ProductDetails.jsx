@@ -29,13 +29,23 @@ function ProductDetails() {
 
         }, [] //this means run only once when the page loads
     )
-
-  //use global state
-  //NOTE {} not []
-  const {cart, addProduct, removeProduct} = useContext(CartContext)
-  //create a varible to test UI
-  //create state
-  const [isCart, setIsCart] = useState(false)
+    
+    
+    //use global state
+    //NOTE {} not []
+    const {cart, addProduct, removeProduct} = useContext(CartContext)
+    //create a varible to test UI
+    //create state
+    const [isCart, setIsCart] = useState(false)
+    
+        useEffect(
+          ()=>{
+            //is this card in cart?
+            setIsCart(cart.find(item=>item.id === product.id))
+            //find returns the element if found, that is considered "true"
+            //returns undefined if not, that is considered "false"
+          }, [cart] 
+           )
 
   return (
     <div className='details-container'>
@@ -46,9 +56,9 @@ function ProductDetails() {
     <p>description: {product?.description}</p>
     {
         isCart?
-        <button className='addcart-btn' onClick={()=>addProduct(product)}>Add to Cart</button>
-        :
         <button className='removecart-btn' onClick={()=>removeProduct(product.id)}>Remove</button>
+        :
+        <button className='addcart-btn' onClick={()=>addProduct(product)}>Add to Cart</button>
     }
       </div>
     </div>

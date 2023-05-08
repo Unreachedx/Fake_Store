@@ -12,7 +12,7 @@ function ProductCard({product}) {
   //create a varible to test UI
   //const isFavorite = false;
   //create state
-  const [isCart, setIsCart] = useState(false)
+  const [isCart, setIsCart] = useState(true)
 
   useEffect(
     ()=>{
@@ -29,7 +29,6 @@ function ProductCard({product}) {
   return (
       
     <div className='product-card'>
-      <p></p>
       <Link to={`/details/${product.id}`}><img src={product.image} /></Link>
       <p>{product.title}</p>
       <p>{product.category}</p>
@@ -38,7 +37,7 @@ function ProductCard({product}) {
         isCart?
         <HiHeart onClick={()=>removeProduct(product.id)} className='heart-icon' />
         :
-        <HiOutlineHeart onClick={()=>addProduct(product)} className='hoart-icon' />
+        <HiOutlineHeart onClick={()=>addProduct(product)} className='heart-icon' />
       }
     </div>
   )

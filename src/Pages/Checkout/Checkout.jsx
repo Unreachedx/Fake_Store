@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import './Checkout.css'
 import { CartContext } from '../../contexts/CartContext'
 import Modal from 'react-modal';
@@ -30,7 +30,7 @@ function Checkout() {
   };
 
   let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
@@ -52,7 +52,7 @@ function Checkout() {
     
     <div className='checkout-container'>
       <div className='head-container'>
-      <h4>Item Price Quantity Remove</h4>
+      <h3>Item  Price   Quantity  Remove</h3>
       </div>
       <div className='products-container'>
         {
@@ -61,7 +61,7 @@ function Checkout() {
           }
       </div>
       <div className='prices-container'>
-      <h2>Total {getPrice()}</h2>
+      <h2>Total {getPrice()}$</h2>
       </div>
       <button className='button-container' onClick={openModal}>Checkout</button>
       <Modal
@@ -69,10 +69,10 @@ function Checkout() {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Checkout Modal"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Your Order was successful!</h2><br/><br/>
-        <h3> Check your email for the order confirmation.<br/>Thank you for Shopping with Fake Store!</h3><br/><br/>
+        <h3 className='modal-text'> Check your email for the order confirmation.<br/>Thank you for Shopping with Fake Store!</h3><br/><br/>
         <button onClick={closeModal}>Return to Main Page</button>
       </Modal>
     </div>

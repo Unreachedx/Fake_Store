@@ -1,7 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import './ProductCard.css'
 import { Link } from 'react-router-dom'
-import { HiHeart, HiOutlineHeart } from "react-icons/hi";
 import { CartContext } from '../../contexts/CartContext';
 
 
@@ -29,15 +28,15 @@ function ProductCard({product}) {
   return (
       
     <div className='product-card'>
-      <Link to={`/details/${product.id}`}><img src={product.image} /></Link>
-      <p>{product.title}</p>
-      <p>{product.category}</p>
+      <Link to={`/details/${product.id}`}><img src={product.image} /><br/></Link>
+      <p>{product.title}</p><br/>
+      <p>{product.category}</p><br/>
       <p>{product.price}$</p>
       {
         isCart?
-        <HiHeart onClick={()=>removeProduct(product.id)} className='heart-icon' />
+        <button onClick={()=>removeProduct(product.id)} className='btn-remove'>Remove</button>
         :
-        <HiOutlineHeart onClick={()=>addProduct(product)} className='heart-icon' />
+        <button onClick={()=>addProduct(product)} className='btn-add'>Add</button>
       }
     </div>
   )

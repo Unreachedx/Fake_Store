@@ -42,3 +42,7 @@ height: 300px;
     height: 41px;
     background: #FFD814; 
 }
+
+.details-container p{
+color: teal;
+}

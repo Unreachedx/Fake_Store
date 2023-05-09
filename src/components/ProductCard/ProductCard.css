@@ -29,3 +29,12 @@
     color:white;
     cursor:pointer;
 }
+
+.product-card p{
+    color: black;
+    font-size: 18px;
+}
+
+.heart-icon{
+    color: black;
+}

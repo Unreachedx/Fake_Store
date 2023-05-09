@@ -28,8 +28,10 @@
 .categories-container{
 display: flex;
 align-items: center;
+
 }
 
 .categories-container p{
 margin: 35px;
+cursor:pointer;
 }
